@@ -3,7 +3,7 @@ kind: Config
 build:
   tagPolicy:
     envTemplate:
-      template: "{{.DOCKER_REGISTRY}}/rawlingsj/jr-teat2:{{.VERSION}}"
+      template: "{{.DOCKER_REGISTRY}}/{{.ORG}}/jr-teat2:{{.VERSION}}"
   artifacts:
   - imageName: changeme
     workspace: .
@@ -17,7 +17,7 @@ profiles:
   build:
     tagPolicy:
       envTemplate:
-        template: "{{.DOCKER_REGISTRY}}/rawlingsj/jr-teat2:{{.DIGEST_HEX}}"
+        template: "{{.DOCKER_REGISTRY}}/{{.ORG}}/jr-teat2:{{.DIGEST_HEX}}"
     artifacts:
     - docker: {}
     local: {}
@@ -27,6 +27,6 @@ profiles:
       - name: jr-teat2
         chartPath: charts/jr-teat2
         setValueTemplates:
-          image.repository: "{{.DOCKER_REGISTRY}}/rawlingsj/jr-teat2"
+          image.repository: "{{.DOCKER_REGISTRY}}/{{.ORGs}}/jr-teat2"
           image.tag: "{{.DIGEST_HEX}}"
         
