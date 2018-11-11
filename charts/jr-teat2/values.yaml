@@ -3,8 +3,8 @@
 # Declare variables to be passed into your templates.
 replicaCount: 1
 image:
-  repository: draft
-  tag: dev
+  repository: 10.27.245.236:5000/cb-kubecd/jr-teat2
+  tag: 0.0.13
   pullPolicy: IfNotPresent
 service:
   name: jr-teat2
